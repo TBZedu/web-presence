@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keyframe Anitmations — Web Presence</title>
+    <meta name="description" content="Superior website">
+    <link rel="stylesheet" href="/assets/layout.css" />
+    <link rel="stylesheet" href="/assets/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar" aria-label="Main menu">
+        <!-- LOGO -->
+        <div class="logo">M152</div>
+        <!-- NAVIGATION MENU -->
+        <ul class="nav-links">
+          <!-- USING CHECKBOX HACK -->
+          <input type="checkbox" id="checkbox_toggle" />
+          <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+          <!-- NAVIGATION MENUS -->
+          <div class="menu">
+            <li><a href="/" tabindex="0">Home</a></li>
+
+            <li class="dropdown-link">
+              <a class="dropdown-root">Concept</a>
+              <!-- DROPDOWN MENU -->
+              <ul class="dropdown">
+                <li><a href="/concept/roadmap.html" tabindex="1">Roadmap</a></li>
+                <li><a href="/concept/designsystem.html" tabindex="2">Design System</a></li>
+                <li><a href="/concept/wireframes.html" tabindex="3">Wireframes</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown-link">
+              <a class="dropdown-root">Copyright</a>
+              <!-- DROPDOWN MENU -->
+              <ul class="dropdown">
+                <li><a href="/copyright/gdpr.html">DSGVO</a></li>
+                <li><a href="/copyright/licenses.html">Lizenzen</a></li>
+                <li><a href="/imprint.html">Impressum</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown-link">
+              <a class="dropdown-root">Media</a>
+              <!-- DROPDOWN MENU -->
+              <ul class="dropdown">
+                <li><a href="/media/audio.html">Audio</a></li>
+                <li><a href="/media/image.html">Image</a></li>
+                <li><a href="/media/video.html">Video</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown-link">
+              <a class="dropdown-root">Animations</a>
+              <!-- DROPDOWN MENU -->
+              <ul class="dropdown">
+                <li>
+                  <a href="/animations/canvas.html">Canvas <span class="require-js">JS</span></a>
+                </li>
+                <li><a href="/animations/gif.html">GIFs</a></li>
+                <li><a href="/animations/keyframe.html">Keyframes</a></li>
+                <li>
+                  <a href="/animations/scrollbased.html">Scroll-basiert <span class="require-js">JS</span></a>
+                </li>
+                <li><a href="/animations/svg.html">SVG</a></li>
+                <li><a href="/animations/transitions.html">Transitions</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown-link">
+              <a class="dropdown-root">Finetune</a>
+              <!-- DROPDOWN MENU -->
+              <ul class="dropdown">
+                <li><a href="/finetune/optimize.html">Optimisierung</a></li>
+                <li><a href="/finetune/testing.html">Testing</a></li>
+              </ul>
+            </li>
+          </div>
+        </ul>
+      </nav>
+    </header>
+    <main class="container offset">
+      <h1>Keyframe Animationen</h1>
+      <p>
+        Keyframes erlauben es einem Entwickler, benutzerdefinierte Animationen zu erstellen. Solch eine Animation verläuft von 0-100% während einer frei wählbaren Zeit. Man kann für jeden Fortschrittspunkt zwischen 0-100% einen Keypoint
+        definieren, welcher den State eines bestimmten CSS Property mithilfe einer frei wählbaren Interpolationsmethode manipuliert.
+      </p>
+      <h2>Beispiel 1</h2>
+      <p>
+        Diese Animation dauert 1 Sekunde. Während dieser Zeit breitet sie sich auf 100% der Breite aus. In 30% (300ms) der Zeit macht sie jedoch 50% der Breite. Daher füllt sich die Bar zuerst schnell und wird dann langsam. Etwas ähnliches
+        kann durch das nutzen einer anderen Interpolationsmethode (timing-function) erreicht werden. Das keyword
+        <span class="code-highlight">infinite</span> bestimmt, dass sich die Animation unendlich lang wiederholt. Um die Animation in abwechselnde Richtungen (füllen und entleeren) abzuspielen, nutzen wir das Keyword
+        <span class="code-highlight">alternate</span>. Die Farbe der Bar ändert sich während einer Sekunde, linear, von grün-gelb zu rot.
+      </p>
+      <div class="animation-example">
+        <style>
+          .animation-example__cube {
+            height: 50px;
+            width: 50px;
+            background-color: green;
+            animation: myCoolAnimation1 1000ms linear 0ms infinite alternate;
+          }
+          @keyframes myCoolAnimation1 {
+            0% {
+              width: 0;
+              background-color: greenyellow;
+            }
+            30% {
+              width: 50%;
+            }
+            100% {
+              width: 100%;
+              background-color: red;
+            }
+          }
+        </style>
+        <div class="animation-example__cube"></div>
+      </div>
+      <div class="code-example">
+        <pre>
+<code>
+<span class="token selector">.animation-example__cube</span> <span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> myCoolAnimation1 1000ms linear 0ms infinite alternate<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">@keyframes</span> myCoolAnimation1 <span class="token punctuation">{</span>
+  0% <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> greenyellow<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  30% <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  100% <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+      </div>
+      <h2>Beispiel 2</h2>
+      <p>
+        Dieses Beispiel füllt die Bar zwar linear (0 Sekunden = 0% Breite, 1 Sekunde = 100% Breite), nutzt jedoch keine lineare Interpolationsmethode (timing-function). Statt <span class="code-highlight">linear</span> wird hier
+        <span class="code-highlight">ease-in-out</span> verwendet. Dies sorgt dafür, dass der Anfang und das Ende der Animation leicht schneller animiert werden und gibt somit einen "smooth" Animation Effekt.
+      </p>
+      <div class="animation-example">
+        <style>
+          .animation-example__cube2 {
+            height: 50px;
+            width: 50px;
+            background-color: green;
+            animation: myCoolAnimation2 1000ms ease-in-out 0ms infinite alternate;
+          }
+          @keyframes myCoolAnimation2 {
+            0% {
+              width: 0;
+            }
+            100% {
+              width: 100%;
+            }
+          }
+        </style>
+        <div class="animation-example__cube2"></div>
+      </div>
+      <div class="code-example">
+        <pre>
+<code>
+<span class="token selector">.animation-example__cube2</span> <span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> myCoolAnimation2 1000ms ease-in-out 0ms infinite alternate<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">@keyframes</span> myCoolAnimation2 <span class="token punctuation">{</span>
+  0% <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  100% <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+    </main>
+    <script src="/assets/cookies.js"></script>
+    <script src="/assets/easteregg.js"></script>
+  </body>
+</html>

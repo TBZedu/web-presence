@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  /* margin: 0;
+  padding: 0; */
+}
+
+body {
+  background-color: #1b1b1b;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/** === TYPOGRAPHY === */
+h1 {
+  font-size: 3rem;
+  font-weight: 200;
+  margin-bottom: 2rem;
+  word-break: break-word;
+}
+
+h2 {
+  font-weight: 300;
+  margin: 3rem 0 0.5rem;
+}
+
+h3 {
+  font-weight: 400;
+  margin: 2rem 0 0.5rem;
+}
+
+/* When an h3 immediately follows an h2 we want to use
+ * a smaller top margin. We also make accommodation
+  for situations where there is an empty div
+  between the two elements */
+h2 ~ div ~ h3,
+h2 ~ h3 {
+  margin-top: 1rem;
+}
+
+h4 {
+  letter-spacing: 0.5px;
+  margin: 2rem 0 1rem;
+}
+
+h5 {
+  letter-spacing: 1.5px;
+  margin: 2rem 0 1rem;
+  text-transform: uppercase;
+}
+
+h6 {
+  letter-spacing: 1.5px;
+  margin: 2rem 0 1rem;
+  text-transform: uppercase;
+}
+
+p {
+  font-weight: 300;
+}
+
+a {
+  color: #69aaf9;
+}
+/** === END OF TYPOGRAPHY === */
+
+table {
+  border: 1px solid #858585;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table td,
+table th {
+  border: 1px solid #858585;
+  padding: 0.5rem 0.75rem;
+  vertical-align: middle;
+}
+
+table th {
+  background: #4e4e4e;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: left;
+}
+
+/** === CODE AND TOKEN HIGHLIGHTING === */
+.code-example {
+  background-color: #343434;
+  border-radius: 3px;
+  color: #fff;
+  font-family: 'Consolas';
+  padding: 7px;
+}
+.code-highlight {
+  color: #ff97a0;
+  font-family: 'Consolas';
+  font-style: italic;
+}
+code {
+  display: block;
+  font-size: 14px;
+  line-height: 15px;
+  overflow-x: auto;
+  padding: 16px;
+}
+.token.property {
+  color: #ff97a0;
+}
+.token.punctuation {
+  color: #9e9e9e;
+}
+.token.selector {
+  color: #bea5ff;
+}
+/** === END OF CODE AND TOKEN HIGHLIGHTING === */
+
+/* NAVBAR STYLING STARTS */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 70px;
+  background-color: #1a1919;
+  color: #fff;
+}
+
+.navbar ul {
+  list-style: none;
+}
+
+.dropdown-root {
+  cursor: pointer;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+}
+/* LOGO */
+.logo {
+  font-size: 32px;
+}
+/* NAVBAR MENU */
+.menu {
+  display: flex;
+  gap: 1em;
+  font-size: 16px;
+}
+.menu li:hover {
+  background-color: #202020;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+.menu li {
+  padding: 5px 7px;
+}
+/* DROPDOWN MENU */
+.dropdown-link {
+  position: relative;
+}
+.dropdown {
+  background-color: #131313;
+  padding: 1em 0;
+  position: absolute; /*WITH RESPECT TO PARENT*/
+  display: none;
+  border-radius: 8px;
+  top: 30px;
+}
+.dropdown li + li {
+  margin-top: 10px;
+}
+.dropdown li {
+  padding: 0.5em 1em;
+  width: 8em;
+  text-align: center;
+}
+.dropdown li:hover {
+  background-color: #1d1d1d;
+}
+.dropdown-link:hover .dropdown {
+  display: block;
+}
+/*RESPONSIVE NAVBAR MENU STARTS*/
+/* CHECKBOX HACK */
+.nav-links > input[type='checkbox'] {
+  display: none;
+}
+/*HAMBURGER MENU*/
+.hamburger {
+  display: none;
+  font-size: 28px;
+  user-select: none;
+}
+.hamburger:hover {
+  cursor: pointer;
+}
+/* APPLYING MEDIA QUERIES */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 20px;
+  }
+  .menu {
+    display: none;
+    position: absolute;
+    background-color: #1a1919;
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 16px 0;
+    border-bottom: 1px solid #cdcdcd;
+  }
+  .menu li:hover {
+    display: inline-block;
+    background-color: #202020;
+    transition: 0.3s ease;
+  }
+  .menu li + li {
+    margin-top: 12px;
+  }
+  .nav-links > input[type='checkbox']:checked ~ .menu {
+    display: block;
+  }
+  .hamburger {
+    display: block;
+  }
+  .dropdown {
+    left: 50%;
+    top: 30px;
+    transform: translateX(35%);
+  }
+  .dropdown li:hover {
+    background-color: #1d1d1d;
+  }
+}
+
+.cookie-banner {
+  position: fixed;
+  bottom: 40px;
+  left: 10%;
+  right: 10%;
+  color: black;
+  width: 80%;
+  padding: 5px 7px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #eee;
+  border-radius: 5px;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.cookie-banner__close {
+  height: 20px;
+  width: 20px;
+  background-color: #777;
+  border: none;
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.animation-example {
+  padding: 15px;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.require-js {
+  background-color: #ff97a0;
+  border-radius: 5px;
+  font-size: 12px;
+  padding: 1px 5px;
+}

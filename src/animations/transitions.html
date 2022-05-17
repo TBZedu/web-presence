@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transitions — Web Presence</title>
+    <meta name="description" content="Superior website">
+    <link rel="stylesheet" href="/assets/layout.css" />
+    <link rel="stylesheet" href="/assets/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar" aria-label="Main menu">
+        <!-- LOGO -->
+        <div class="logo">M152</div>
+        <!-- NAVIGATION MENU -->
+        <ul class="nav-links">
+          <!-- USING CHECKBOX HACK -->
+          <input type="checkbox" id="checkbox_toggle" />
+          <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+          <!-- NAVIGATION MENUS -->
+          <div class="menu">
+            <li><a href="/" tabindex="0">Home</a></li>
+
+            <li class="dropdown-link">
+              <a class="dropdown-root">Concept</a>
+              <!-- DROPDOWN MENU -->
+              <ul class="dropdown">
+                <li><a href="/concept/roadmap.html" tabindex="1">Roadmap</a></li>
+                <li><a href="/concept/designsystem.html" tabindex="2">Design System</a></li>
+                <li><a href="/concept/wireframes.html" tabindex="3">Wireframes</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown-link">
+              <a class="dropdown-root">Copyright</a>
+              <!-- DROPDOWN MENU -->
+              <ul class="dropdown">
+                <li><a href="/copyright/gdpr.html">DSGVO</a></li>
+                <li><a href="/copyright/licenses.html">Lizenzen</a></li>
+                <li><a href="/imprint.html">Impressum</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown-link">
+              <a class="dropdown-root">Media</a>
+              <!-- DROPDOWN MENU -->
+              <ul class="dropdown">
+                <li><a href="/media/audio.html">Audio</a></li>
+                <li><a href="/media/image.html">Image</a></li>
+                <li><a href="/media/video.html">Video</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown-link">
+              <a class="dropdown-root">Animations</a>
+              <!-- DROPDOWN MENU -->
+              <ul class="dropdown">
+                <li>
+                  <a href="/animations/canvas.html">Canvas <span class="require-js">JS</span></a>
+                </li>
+                <li><a href="/animations/gif.html">GIFs</a></li>
+                <li><a href="/animations/keyframe.html">Keyframes</a></li>
+                <li>
+                  <a href="/animations/scrollbased.html">Scroll-basiert <span class="require-js">JS</span></a>
+                </li>
+                <li><a href="/animations/svg.html">SVG</a></li>
+                <li><a href="/animations/transitions.html">Transitions</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown-link">
+              <a class="dropdown-root">Finetune</a>
+              <!-- DROPDOWN MENU -->
+              <ul class="dropdown">
+                <li><a href="/finetune/optimize.html">Optimisierung</a></li>
+                <li><a href="/finetune/testing.html">Testing</a></li>
+              </ul>
+            </li>
+          </div>
+        </ul>
+      </nav>
+    </header>
+    <main class="container offset">
+      <h1>CSS Transitions</h1>
+      <p>
+        Mit CSS Transitions kann man Übergänge zwischen verschiedenen States animieren. So kann man zum Beispiel, wie Unten gezeigt, umsetzen, dass sich ein Element dreht sobald man drüber hovert. Um zu definieren was animiert werden soll
+        gibt es das 'transition' Property. Hiermit gibt man mit, welches Property einen Übergang erhalten soll sobald sich der Wert des Properties ändert.
+      </p>
+      <h2>Beispiel mit einem Property</h2>
+      <p>In diesem Beispiel wird <span class="code-highlight">transition: transform 2s</span> genutzt, um dem 'transform' Property einen Übergang in der Länge von 2 Sekunden hinzuzufügen.</p>
+      <div class="animation-example">
+        <style>
+          .animation-example__cube {
+            height: 50px;
+            width: 50px;
+            background-color: red;
+            transition: transform 2s;
+          }
+          .animation-example__cube:hover {
+            transform: rotateZ(360deg);
+          }
+        </style>
+        <div class="animation-example__cube"></div>
+      </div>
+      <div class="code-example">
+        <pre>
+<code>
+<span class="token selector">.animation-example__cube</span> <span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> transform 2s<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.animation-example__cube:hover</span> <span class="token punctuation">{</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> rotateZ(360deg)<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+      </div>
+
+      <h2>Beispiel mit mehreren Properties</h2>
+      <p>
+        In diesem Beispiel wird <span class="code-highlight">transition: transform 1s, background-color 1.5s</span> genutzt, um dem 'transform' Property einen Übergang in der Länge von 1 Sekunden und dem 'background-color' Property einen
+        Übergang in der Länge von 1.5 Sekunden hinzuzufügen. Dies kann mit beliebig vielen Properties erweitert werden oder mit der Benutzung von <span class="code-highlight">transition: all 2s</span>, alle Properties bestimmen.
+      </p>
+      <div class="animation-example">
+        <style>
+          .animation-example__cube2 {
+            height: 50px;
+            width: 50px;
+            background-color: red;
+            transition: transform 1s, background-color 1.5s;
+          }
+          .animation-example__cube2:hover {
+            transform: rotateZ(360deg);
+            background-color: blue;
+          }
+        </style>
+        <div class="animation-example__cube2"></div>
+      </div>
+      <div class="code-example">
+        <pre>
+<code>
+<span class="token selector">.animation-example__cube2</span> <span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> transform 1s, background-color 1.5s<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.animation-example__cube2:hover</span> <span class="token punctuation">{</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> rotateZ(360deg)<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+      </div>
+    </main>
+    <script src="/assets/cookies.js"></script>
+    <script src="/assets/easteregg.js"></script>
+  </body>
+</html>

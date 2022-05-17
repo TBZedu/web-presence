@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wireframes — Web Presence</title>
+    <meta name="description" content="Superior website">
+    <link rel="stylesheet" href="/assets/layout.css" />
+    <link rel="stylesheet" href="/assets/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar" aria-label="Main menu">
+        <!-- LOGO -->
+        <div class="logo">M152</div>
+        <!-- NAVIGATION MENU -->
+        <ul class="nav-links">
+          <!-- USING CHECKBOX HACK -->
+          <input type="checkbox" id="checkbox_toggle" />
+          <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+          <!-- NAVIGATION MENUS -->
+          <div class="menu">
+            <li><a href="/" tabindex="0">Home</a></li>
+
+            <li class="dropdown-link">
+              <a class="dropdown-root">Concept</a>
+              <!-- DROPDOWN MENU -->
+              <ul class="dropdown">
+                <li><a href="/concept/roadmap.html" tabindex="1">Roadmap</a></li>
+                <li><a href="/concept/designsystem.html" tabindex="2">Design System</a></li>
+                <li><a href="/concept/wireframes.html" tabindex="3">Wireframes</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown-link">
+              <a class="dropdown-root">Copyright</a>
+              <!-- DROPDOWN MENU -->
+              <ul class="dropdown">
+                <li><a href="/copyright/gdpr.html">DSGVO</a></li>
+                <li><a href="/copyright/licenses.html">Lizenzen</a></li>
+                <li><a href="/imprint.html">Impressum</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown-link">
+              <a class="dropdown-root">Media</a>
+              <!-- DROPDOWN MENU -->
+              <ul class="dropdown">
+                <li><a href="/media/audio.html">Audio</a></li>
+                <li><a href="/media/image.html">Image</a></li>
+                <li><a href="/media/video.html">Video</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown-link">
+              <a class="dropdown-root">Animations</a>
+              <!-- DROPDOWN MENU -->
+              <ul class="dropdown">
+                <li>
+                  <a href="/animations/canvas.html">Canvas <span class="require-js">JS</span></a>
+                </li>
+                <li><a href="/animations/gif.html">GIFs</a></li>
+                <li><a href="/animations/keyframe.html">Keyframes</a></li>
+                <li>
+                  <a href="/animations/scrollbased.html">Scroll-basiert <span class="require-js">JS</span></a>
+                </li>
+                <li><a href="/animations/svg.html">SVG</a></li>
+                <li><a href="/animations/transitions.html">Transitions</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown-link">
+              <a class="dropdown-root">Finetune</a>
+              <!-- DROPDOWN MENU -->
+              <ul class="dropdown">
+                <li><a href="/finetune/optimize.html">Optimisierung</a></li>
+                <li><a href="/finetune/testing.html">Testing</a></li>
+              </ul>
+            </li>
+          </div>
+        </ul>
+      </nav>
+    </header>
+    <main class="container">
+      <h1>Wireframes</h1>
+      <p>Mein Ziel ist es, die Webseite so aufzubauen, dass sich die Seiten generell nicht so sehr voneinander unterscheiden. Deshalb sind die Wireframes sehr generell aufgebaut.</p>
+      <h2>Desktop</h2>
+      <img src="/assets/wireframe_desktop.svg" alt="Desktop wireframes" style="max-width: 100%;">
+      <h2>Mobile</h2>
+      <img src="/assets/wireframe_mobile.svg" alt="Mobile wireframes" style="max-width: 100%;">
+    </main>
+    <script src="/assets/cookies.js"></script>
+    <script src="/assets/easteregg.js"></script>
+  </body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll-Based Animations — Web Presence</title>
+    <meta name="description" content="Superior website">
+    <link rel="stylesheet" href="/assets/layout.css" />
+    <link rel="stylesheet" href="/assets/style.css" />
+  </head>
+  <body>
+    <header style="position: fixed;top: 0;width: 100%;">
+      <nav class="navbar" aria-label="Main menu">
+        <!-- LOGO -->
+        <div class="logo">M152</div>
+        <!-- NAVIGATION MENU -->
+        <ul class="nav-links">
+          <!-- USING CHECKBOX HACK -->
+          <input type="checkbox" id="checkbox_toggle" />
+          <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+          <!-- NAVIGATION MENUS -->
+          <div class="menu">
+            <li><a href="/" tabindex="0">Home</a></li>
+
+            <li class="dropdown-link">
+              <a class="dropdown-root">Concept</a>
+              <!-- DROPDOWN MENU -->
+              <ul class="dropdown">
+                <li><a href="/concept/roadmap.html" tabindex="1">Roadmap</a></li>
+                <li><a href="/concept/designsystem.html" tabindex="2">Design System</a></li>
+                <li><a href="/concept/wireframes.html" tabindex="3">Wireframes</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown-link">
+              <a class="dropdown-root">Copyright</a>
+              <!-- DROPDOWN MENU -->
+              <ul class="dropdown">
+                <li><a href="/copyright/gdpr.html">DSGVO</a></li>
+                <li><a href="/copyright/licenses.html">Lizenzen</a></li>
+                <li><a href="/imprint.html">Impressum</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown-link">
+              <a class="dropdown-root">Media</a>
+              <!-- DROPDOWN MENU -->
+              <ul class="dropdown">
+                <li><a href="/media/audio.html">Audio</a></li>
+                <li><a href="/media/image.html">Image</a></li>
+                <li><a href="/media/video.html">Video</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown-link">
+              <a class="dropdown-root">Animations</a>
+              <!-- DROPDOWN MENU -->
+              <ul class="dropdown">
+                <li>
+                  <a href="/animations/canvas.html">Canvas <span class="require-js">JS</span></a>
+                </li>
+                <li><a href="/animations/gif.html">GIFs</a></li>
+                <li><a href="/animations/keyframe.html">Keyframes</a></li>
+                <li>
+                  <a href="/animations/scrollbased.html">Scroll-basiert <span class="require-js">JS</span></a>
+                </li>
+                <li><a href="/animations/svg.html">SVG</a></li>
+                <li><a href="/animations/transitions.html">Transitions</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown-link">
+              <a class="dropdown-root">Finetune</a>
+              <!-- DROPDOWN MENU -->
+              <ul class="dropdown">
+                <li><a href="/finetune/optimize.html">Optimisierung</a></li>
+                <li><a href="/finetune/testing.html">Testing</a></li>
+              </ul>
+            </li>
+          </div>
+        </ul>
+      </nav>
+    </header>
+    <main class="container offset">
+      <h1 class="fixed">Skroll-Basierende Animationen</h1>
+      <p class="fixed">
+        Mit JavaScript können in einem "scroll" - EventListener DOM Elemente manipuliert werden.<br />
+        Der globale EventListener wird gesetzt, der bei jedem Scroll-Event die stroke-dashoffset property des SVGs setzt.<br />
+        Wenn du mehr über diese Art von SVG-Animation lernen willst, kannst du <a href="/animations/svg.html">hier klicken</a>
+      </p>
+
+      <h2 class="fixed">Beispiel einer Skroll-Basierender Animation</h2>
+      <svg
+        class="fixed"
+        width="100%"
+        height="100%"
+        viewBox="0 0 1600 900"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xml:space="preserve"
+        xmlns:serif="http://www.serif.com/"
+        style="fill-rule: evenodd; clip-rule: evenodd; stroke-linecap: round; stroke-linejoin: round; stroke-miterlimit: 1.5"
+      >
+        <g transform="matrix(1,0,0,1,-16,97.7558)">
+          <path
+            d="M137,173L641,153L383.83,163.205L383.83,532C383.83,532 759.438,602.602 759,488C758.562,373.398 759,153 759,153C759,153 1026.85,132.497 1033,222C1033,222 1015.08,279.028 866,268C866,268 1027.57,319.033 1033,430C1033,430 936.915,514.301 759,488C759,488 1302.17,591.588 1408,488L1104,488L1426,173L1135,173"
+            style="fill: none; stroke: white; stroke-width: 12px"
+          />
+        </g>
+      </svg>
+
+      <noscript>JavaScript muss eingeschaltet sein, so dass diese Animationen funktionieren</noscript>
+      <div class="scrollmaker"></div>
+      <script>
+        const t = document.querySelector('.scrollmaker');
+        const svg = document.querySelector('svg');
+        svg.style.strokeDashoffset = 4600 - window.scrollY + 'px';
+        window.onscroll = () => {
+          t.style.height = 4600 + window.innerHeight + 'px';
+          if (window.scrollY > 4600) return;
+          svg.style.strokeDashoffset = 4600 - window.scrollY + 'px';
+        };
+      </script>
+      <style>
+        svg.fixed {
+          z-index: -1;
+          position: fixed;
+          width: 50%;
+        }
+        h1.fixed {
+          position: fixed;
+        }
+        p.fixed {
+          position: fixed;
+          top: 180px;
+        }
+        h2.fixed {
+          top: 240px;
+          position: fixed;
+        }
+        .scrollmaker {
+          height: 4600px;
+        }
+        svg {
+          stroke-dashoffset: 4600;
+          stroke-dasharray: 4600;
+        }
+      </style>
+    </main>
+    <script src="/assets/cookies.js"></script>
+    <script src="/assets/easteregg.js"></script>
+  </body>
+</html>

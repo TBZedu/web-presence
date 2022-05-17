@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Designsystem — Web Presence</title>
+    <meta name="description" content="Superior website" />
+    <link rel="stylesheet" href="/assets/layout.css" />
+    <link rel="stylesheet" href="/assets/style.css" />
+    <style>
+      .nomargin {
+        margin: 2.25rem 0 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar" aria-label="Main menu">
+        <!-- LOGO -->
+        <div class="logo">M152</div>
+        <!-- NAVIGATION MENU -->
+        <ul class="nav-links">
+          <!-- USING CHECKBOX HACK -->
+          <input type="checkbox" id="checkbox_toggle" />
+          <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+          <!-- NAVIGATION MENUS -->
+          <div class="menu">
+            <li><a href="/" tabindex="0">Home</a></li>
+
+            <li class="dropdown-link">
+              <a class="dropdown-root">Concept</a>
+              <!-- DROPDOWN MENU -->
+              <ul class="dropdown">
+                <li><a href="/concept/roadmap.html" tabindex="1">Roadmap</a></li>
+                <li><a href="/concept/designsystem.html" tabindex="2">Design System</a></li>
+                <li><a href="/concept/wireframes.html" tabindex="3">Wireframes</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown-link">
+              <a class="dropdown-root">Copyright</a>
+              <!-- DROPDOWN MENU -->
+              <ul class="dropdown">
+                <li><a href="/copyright/gdpr.html">DSGVO</a></li>
+                <li><a href="/copyright/licenses.html">Lizenzen</a></li>
+                <li><a href="/imprint.html">Impressum</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown-link">
+              <a class="dropdown-root">Media</a>
+              <!-- DROPDOWN MENU -->
+              <ul class="dropdown">
+                <li><a href="/media/audio.html">Audio</a></li>
+                <li><a href="/media/image.html">Image</a></li>
+                <li><a href="/media/video.html">Video</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown-link">
+              <a class="dropdown-root">Animations</a>
+              <!-- DROPDOWN MENU -->
+              <ul class="dropdown">
+                <li>
+                  <a href="/animations/canvas.html">Canvas <span class="require-js">JS</span></a>
+                </li>
+                <li><a href="/animations/gif.html">GIFs</a></li>
+                <li><a href="/animations/keyframe.html">Keyframes</a></li>
+                <li>
+                  <a href="/animations/scrollbased.html">Scroll-basiert <span class="require-js">JS</span></a>
+                </li>
+                <li><a href="/animations/svg.html">SVG</a></li>
+                <li><a href="/animations/transitions.html">Transitions</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown-link">
+              <a class="dropdown-root">Finetune</a>
+              <!-- DROPDOWN MENU -->
+              <ul class="dropdown">
+                <li><a href="/finetune/optimize.html">Optimisierung</a></li>
+                <li><a href="/finetune/testing.html">Testing</a></li>
+              </ul>
+            </li>
+          </div>
+        </ul>
+      </nav>
+    </header>
+    <main class="container">
+      <h1>Designsystem</h1>
+      <section>
+        <h2>Typografie</h2>
+        <div>
+          <h1 class="nomargin">Heading 1</h1>
+          <span>300, 48/58 px</span>
+        </div>
+        <div>
+          <h2 class="nomargin">Heading 2</h2>
+          <span>300, 24/36 px</span>
+        </div>
+        <div>
+          <h3 class="nomargin">Heading 3</h3>
+          <span>300, 18/24 px</span>
+        </div>
+        <div>
+          <h4 class="nomargin">Heading 4</h4>
+          <span>300, 16/18 px</span>
+        </div>
+        <div>
+          <h5 class="nomargin">Heading 5</h5>
+          <span>300, 14/16 px</span>
+        </div>
+        <div>
+          <h6 class="nomargin">Heading 6</h6>
+          <span>300, 10/12 px</span>
+        </div>
+      </section>
+      <section>
+        <h2>Farben</h2>
+        <style>
+          .color-cube {
+            border: 1px solid gainsboro;
+            height: 40px;
+            width: 40px;
+          }
+        </style>
+        <div>
+          <h5>Primary</h5>
+          <div class="color-cube" style="background-color: #ff97a0;"></div>
+        </div>
+        <div>
+          <h5>Secondary</h5>
+          <div class="color-cube" style="background-color: #fff;"></div>
+        </div>
+        <div>
+          <h5>Background</h5>
+          <div class="color-cube" style="background-color: #1b1b1b;"></div>
+        </div>
+      </section>
+    </main>
+    <script src="/assets/cookies.js"></script>
+    <script src="/assets/easteregg.js"></script>
+  </body>
+</html>

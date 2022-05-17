@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GDPR — Web Presence</title>
+    <meta name="description" content="Superior website">
+    <link rel="stylesheet" href="/assets/layout.css" />
+    <link rel="stylesheet" href="/assets/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar" aria-label="Main menu">
+        <!-- LOGO -->
+        <div class="logo">M152</div>
+        <!-- NAVIGATION MENU -->
+        <ul class="nav-links">
+          <!-- USING CHECKBOX HACK -->
+          <input type="checkbox" id="checkbox_toggle" />
+          <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+          <!-- NAVIGATION MENUS -->
+          <div class="menu">
+            <li><a href="/" tabindex="0">Home</a></li>
+
+            <li class="dropdown-link">
+              <a class="dropdown-root">Concept</a>
+              <!-- DROPDOWN MENU -->
+              <ul class="dropdown">
+                <li><a href="/concept/roadmap.html" tabindex="1">Roadmap</a></li>
+                <li><a href="/concept/designsystem.html" tabindex="2">Design System</a></li>
+                <li><a href="/concept/wireframes.html" tabindex="3">Wireframes</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown-link">
+              <a class="dropdown-root">Copyright</a>
+              <!-- DROPDOWN MENU -->
+              <ul class="dropdown">
+                <li><a href="/copyright/gdpr.html">DSGVO</a></li>
+                <li><a href="/copyright/licenses.html">Lizenzen</a></li>
+                <li><a href="/imprint.html">Impressum</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown-link">
+              <a class="dropdown-root">Media</a>
+              <!-- DROPDOWN MENU -->
+              <ul class="dropdown">
+                <li><a href="/media/audio.html">Audio</a></li>
+                <li><a href="/media/image.html">Image</a></li>
+                <li><a href="/media/video.html">Video</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown-link">
+              <a class="dropdown-root">Animations</a>
+              <!-- DROPDOWN MENU -->
+              <ul class="dropdown">
+                <li>
+                  <a href="/animations/canvas.html">Canvas <span class="require-js">JS</span></a>
+                </li>
+                <li><a href="/animations/gif.html">GIFs</a></li>
+                <li><a href="/animations/keyframe.html">Keyframes</a></li>
+                <li>
+                  <a href="/animations/scrollbased.html">Scroll-basiert <span class="require-js">JS</span></a>
+                </li>
+                <li><a href="/animations/svg.html">SVG</a></li>
+                <li><a href="/animations/transitions.html">Transitions</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown-link">
+              <a class="dropdown-root">Finetune</a>
+              <!-- DROPDOWN MENU -->
+              <ul class="dropdown">
+                <li><a href="/finetune/optimize.html">Optimisierung</a></li>
+                <li><a href="/finetune/testing.html">Testing</a></li>
+              </ul>
+            </li>
+          </div>
+        </ul>
+      </nav>
+    </header>
+    <main class="container offset">
+      <h1>DSGVO</h1>
+      <p>Die Datenschutzgrundverordnung (DSGVO) / GDPR (General Data Protection Regulation) ist ein Gesetz, welches den Umgang mit personenbezogenen Daten regelt. Die DSGVO gilt seit dem 25. Mai 2018 in den Staaten der EU.</p>
+
+      <h2>Die wichtigsten Punkte</h2>
+      <ul>
+        <li>Die Erhebung oder Weitergebung von personenbezogene Daten benötigt eine Zustimmung der betroffenen Person</li>
+        <li>Jeder hat ein Recht darauf zu erfahren welche persönlichen Daten von Unternehmen gespeichert werden</li>
+        <li>Jeder kann eine Löschung seiner personenbezogene Daten fordern, Unternehmen müssen diese Forderung befolgen sofern die Speicherung dieser Daten nicht durch andere gesetzliche Regelungen verpflichtet ist</li>
+      </ul>
+
+      <h2>Beispiele von personenbezogenen Daten</h2>
+      <ul>
+        <li>Name</li>
+        <li>Geburtsdatum / Alter</li>
+        <li>Anschrift</li>
+        <li>Telefonnummer</li>
+        <li>E-Mail Adresse</li>
+        <li>Konto- oder Kreditkartennummer</li>
+        <li>Personalausweisnummer</li>
+        <li>Kfz-Nummer</li>
+        <li>Krankendaten</li>
+        <li>Biometrische Daten</li>
+        <li>IP-Adresse</li>
+      </ul>
+    </main>
+    <script src="/assets/cookies.js"></script>
+    <script src="/assets/easteregg.js"></script>
+  </body>
+</html>

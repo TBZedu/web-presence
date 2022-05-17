@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SVG Animations — Web Presence</title>
+    <meta name="description" content="Superior website">
+    <link rel="stylesheet" href="/assets/layout.css" />
+    <link rel="stylesheet" href="/assets/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar" aria-label="Main menu">
+        <!-- LOGO -->
+        <div class="logo">M152</div>
+        <!-- NAVIGATION MENU -->
+        <ul class="nav-links">
+          <!-- USING CHECKBOX HACK -->
+          <input type="checkbox" id="checkbox_toggle" />
+          <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+          <!-- NAVIGATION MENUS -->
+          <div class="menu">
+            <li><a href="/" tabindex="0">Home</a></li>
+
+            <li class="dropdown-link">
+              <a class="dropdown-root">Concept</a>
+              <!-- DROPDOWN MENU -->
+              <ul class="dropdown">
+                <li><a href="/concept/roadmap.html" tabindex="1">Roadmap</a></li>
+                <li><a href="/concept/designsystem.html" tabindex="2">Design System</a></li>
+                <li><a href="/concept/wireframes.html" tabindex="3">Wireframes</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown-link">
+              <a class="dropdown-root">Copyright</a>
+              <!-- DROPDOWN MENU -->
+              <ul class="dropdown">
+                <li><a href="/copyright/gdpr.html">DSGVO</a></li>
+                <li><a href="/copyright/licenses.html">Lizenzen</a></li>
+                <li><a href="/imprint.html">Impressum</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown-link">
+              <a class="dropdown-root">Media</a>
+              <!-- DROPDOWN MENU -->
+              <ul class="dropdown">
+                <li><a href="/media/audio.html">Audio</a></li>
+                <li><a href="/media/image.html">Image</a></li>
+                <li><a href="/media/video.html">Video</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown-link">
+              <a class="dropdown-root">Animations</a>
+              <!-- DROPDOWN MENU -->
+              <ul class="dropdown">
+                <li>
+                  <a href="/animations/canvas.html">Canvas <span class="require-js">JS</span></a>
+                </li>
+                <li><a href="/animations/gif.html">GIFs</a></li>
+                <li><a href="/animations/keyframe.html">Keyframes</a></li>
+                <li>
+                  <a href="/animations/scrollbased.html">Scroll-basiert <span class="require-js">JS</span></a>
+                </li>
+                <li><a href="/animations/svg.html">SVG</a></li>
+                <li><a href="/animations/transitions.html">Transitions</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown-link">
+              <a class="dropdown-root">Finetune</a>
+              <!-- DROPDOWN MENU -->
+              <ul class="dropdown">
+                <li><a href="/finetune/optimize.html">Optimisierung</a></li>
+                <li><a href="/finetune/testing.html">Testing</a></li>
+              </ul>
+            </li>
+          </div>
+        </ul>
+      </nav>
+    </header>
+    <main class="container offset">
+      <h1>SVG Animationen</h1>
+      <p>
+        SVG Animationen sind mit CSS relativ einfach möglich. Zuerst wird in CSS eine stroke-dasharray property hinzugefügt. Diese soll so hoch gesetzt werden, dass der ganze Pfad wieder sichtbar wird. Danach kann mit stroke-dashoffset
+        property kontrolliert werden, wieviel vom Pfad sichtbar sein sollte. Ist der Wert 0, wird alles angezeigt. Wenn der Wert dem Wert der stroke-dasharray property entspricht, ist die hälfte sichtbar und wenn der Wert dem doppelten der
+        stroke-dasharray property entspricht, ist wieder alles sichtbar. Dass kann so einfach in einer @keyframe rule eingebaut werden. Um mehr über @keyframes zu erfahren, kannst du <a href="/animations/keyframe.html">hier klicken</a>.
+      </p>
+
+      <h2>Beispiel einer Text-Animation</h2>
+      <svg
+        width="100%"
+        height="100%"
+        viewBox="0 0 1600 900"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        style="fill-rule: evenodd; clip-rule: evenodd; stroke-linecap: round; stroke-linejoin: round; stroke-miterlimit: 1.5"
+      >
+        <path
+          d="M156,244L141,657C141,657 205.128,453.496 337,450C337,450 476.998,453.546 475,588C475,588 559.216,757.019 721,479C721,479 720.938,331.573 532,450C395.801,535.369 919.958,590.487 900,450C900,450 1005,710.645 1109,450C1109,450 1035.02,759.134 900,792"
+          style="fill: none; stroke: white; stroke-width: 10px"
+        />
+      </svg>
+
+      <style>
+        p {
+          z-index: 99;
+        }
+        path {
+          stroke-dasharray: 2760;
+          animation: dash 5s linear infinite;
+        }
+
+        @keyframes dash {
+          from {
+            stroke-dashoffset: 5500;
+          }
+          to {
+            stroke-dashoffset: 0;
+          }
+        }
+      </style>
+    </main>
+    <script src="/assets/cookies.js"></script>
+    <script src="/assets/easteregg.js"></script>
+  </body>
+</html>
